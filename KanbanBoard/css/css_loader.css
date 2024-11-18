@@ -1,0 +1,57 @@
+/* HTML: <div class="loader1"></div> */
+.loader1 {
+  width: 40px;
+  height: 30px;
+  --c:no-repeat linear-gradient(#000 0 0);
+  background:
+    var(--c) 0    100%/8px 30px,
+    var(--c) 50%  100%/8px 20px,
+    var(--c) 100% 100%/8px 10px;
+  position: relative;
+  clip-path: inset(-100% 0);
+}
+.loader1:before{
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #000;
+  left: -16px;
+  top: 0;
+  animation: 
+    l5-1 2s   linear infinite,
+    l5-2 0.5s cubic-bezier(0,200,.8,200) infinite;
+}
+@keyframes l5-1 {
+  0%   {left:-16px;transform:translateY(-8px)}
+  100% {left:calc(100% + 8px);transform:translateY(22px)}
+}
+@keyframes l5-2 {
+  100% {top:-0.1px}
+}
+
+
+/* HTML: <div class="loader2"></div> */
+.loader2 {
+  width: 60px;
+  aspect-ratio: 1;
+  background: 
+    linear-gradient(45deg,#60B99A 50%,#0000 0),
+    linear-gradient(45deg,#0000 50%,#60B99A 0),
+    linear-gradient(-45deg,#f77825 50%,#0000 0),
+    linear-gradient(-45deg,#0000 50%,#f77825 0),
+    linear-gradient(#554236 0 0);
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  animation: l18 1.5s infinite;
+}
+@keyframes l18{
+  0%   {background-position:50% 50%,50% 50%,50%  50% ,50% 50%,50% 50%}
+  25%  {background-position:0  100%,100%  0,50%  50% ,50% 50%,50% 50%}
+  50%  {background-position:0  100%,100%  0,100% 100%,0   0  ,50% 50%}
+  75%  {background-position:50% 50%,50% 50%,100% 100%,0   0  ,50% 50%}
+  100% {background-position:50% 50%,50% 50%,50%  50% ,50% 50%,50% 50%}
+}
+
+
